@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Millenium Drones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#1a202c',
+            'brand-secondary': '#2d3748',
+            'brand-accent': '#00BCD4',
+            'brand-light': '#f7fafc',
+            'brand-text': '#e2e8f0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <style>
+    .active-nav-link {
+      background-color: #00BCD4; /* brand-accent */
+      color: white;
+    }
+    .inactive-nav-link {
+      color: #e2e8f0; /* brand-text */
+    }
+     .inactive-nav-link:hover {
+        background-color: #4a5568; /* gray-700 for hover */
+        color: white;
+    }
+  </style>
+</head>
+<body class="bg-brand-primary text-brand-text font-sans">
+  <nav class="bg-brand-secondary shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center">
+          <a href="./index.html" class="flex-shrink-0 flex items-center text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-10 w-10 text-brand-accent mr-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.85l.708.707a2.25 2.25 0 010 3.182L11.53 10.53a2.25 2.25 0 01-3.182 0L6.272 8.455a2.25 2.25 0 010-3.182L7.025 4.48c.205-.2.518-.303.85-.303h.568a2.25 2.25 0 002.25-2.25v-.568c0-.334.148-.65.405-.85L12 2.25l.708.707a1.125 1.125 0 00.85.405h.568c1.24 0 2.25 1.01 2.25 2.25v.568c0 .334-.148.65-.405.85l-.708.707a2.25 2.25 0 000 3.182l2.473 2.472a2.25 2.25 0 003.182 0l.707-.707c.257-.257.405-.596.405-.955V8.25a2.25 2.25 0 00-2.25-2.25h-.568a1.125 1.125 0 00-.85.405L15.75 6.75v-.568a2.25 2.25 0 00-2.25-2.25h-.568A1.125 1.125 0 0012.75 3.03z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18H4.5a2.25 2.25 0 01-2.25-2.25V13.5A2.25 2.25 0 014.5 11.25H6M18 18h1.5a2.25 2.25 0 002.25-2.25V13.5A2.25 2.25 0 0019.5 11.25H18M12 12.75V21m0 0H9.75M12 21h2.25" />
+            </svg>
+            <span class="font-bold text-2xl tracking-tight">Millenium Drones</span>
+          </a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="./index.html" data-navlink="index.html" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Home</a>
+            <a href="./about.html" data-navlink="about.html" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out inactive-nav-link">About Us</a>
+            <a href="./products.html" data-navlink="products.html" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Our Drones</a>
+            <a href="./contact.html" data-navlink="contact.html" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Contact Us</a>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <button
+            id="mobile-menu-button"
+            type="button"
+            class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6 menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <svg class="hidden h-6 w-6 menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="./index.html" data-navlink-mobile="index.html" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Home</a>
+        <a href="./about.html" data-navlink-mobile="about.html" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-150 ease-in-out inactive-nav-link">About Us</a>
+        <a href="./products.html" data-navlink-mobile="products.html" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Our Drones</a>
+        <a href="./contact.html" data-navlink-mobile="contact.html" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow">
+    <div class="bg-brand-primary py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
+            About Millenium Drones
+          </h1>
+          <p class="mt-6 max-w-3xl mx-auto text-xl text-brand-text">
+            Pioneering the future of aerial solutions with passion and precision.
+          </p>
+        </div>
+
+        <div class="mt-16 bg-brand-secondary shadow-xl rounded-lg p-8 md:p-12">
+          <h2 class="text-2xl font-bold text-brand-accent mb-4">Our Story</h2>
+          <p class="text-brand-text leading-relaxed mb-6">
+            Founded in 2020 by a team of passionate engineers and aviation experts, Millenium Drones was born from a shared vision: to make advanced aerial technology accessible and impactful. We saw the potential for drones to transform various sectors, from agriculture and construction to public safety and cinematography. Starting in a small workshop, we meticulously designed and tested our first prototypes, focusing on durability, performance, and user-friendliness. Today, Millenium Drones has grown into a trusted name, known for pushing the boundaries of what's possible with unmanned aerial systems. Our commitment to research and development ensures that we stay at the forefront of the industry, delivering cutting-edge solutions to our clients worldwide.
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h2 class="text-2xl font-bold text-brand-accent mb-4">Our Mission</h2>
+              <p class="text-brand-text leading-relaxed">
+                Our mission is to revolutionize industries through innovative aerial technology, providing reliable, efficient, and intelligent drone solutions that empower our customers to achieve more.
+              </p>
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold text-brand-accent mb-4">Our Vision</h2>
+              <p class="text-brand-text leading-relaxed">
+                To be the global leader in drone technology, recognized for our commitment to quality, innovation, and customer success.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-16">
+          <h2 class="text-3xl font-extrabold text-white text-center mb-12">Our Core Values</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-brand-secondary p-6 rounded-lg shadow-lg text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 text-brand-accent mx-auto mb-4"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 4.5l7.5 7.5-7.5 7.5" /></svg>
+              <h3 class="text-xl font-semibold text-white mb-2">Innovation</h3>
+              <p class="text-brand-text text-sm">
+                Constantly pushing the boundaries of technology to deliver cutting-edge solutions.
+              </p>
+            </div>
+            <div class="bg-brand-secondary p-6 rounded-lg shadow-lg text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 text-brand-accent mx-auto mb-4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+              <h3 class="text-xl font-semibold text-white mb-2">Reliability</h3>
+              <p class="text-brand-text text-sm">
+                Building robust and dependable drones that perform consistently in demanding environments.
+              </p>
+            </div>
+            <div class="bg-brand-secondary p-6 rounded-lg shadow-lg text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 text-brand-accent mx-auto mb-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.85l.708.707a2.25 2.25 0 010 3.182L11.53 10.53a2.25 2.25 0 01-3.182 0L6.272 8.455a2.25 2.25 0 010-3.182L7.025 4.48c.205-.2.518-.303.85-.303h.568a2.25 2.25 0 002.25-2.25v-.568c0-.334.148-.65.405-.85L12 2.25l.708.707a1.125 1.125 0 00.85.405h.568c1.24 0 2.25 1.01 2.25 2.25v.568c0 .334-.148.65-.405.85l-.708.707a2.25 2.25 0 000 3.182l2.473 2.472a2.25 2.25 0 003.182 0l.707-.707c.257-.257.405-.596.405-.955V8.25a2.25 2.25 0 00-2.25-2.25h-.568a1.125 1.125 0 00-.85.405L15.75 6.75v-.568a2.25 2.25 0 00-2.25-2.25h-.568A1.125 1.125 0 0012.75 3.03z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18H4.5a2.25 2.25 0 01-2.25-2.25V13.5A2.25 2.25 0 014.5 11.25H6M18 18h1.5a2.25 2.25 0 002.25-2.25V13.5A2.25 2.25 0 0019.5 11.25H18M12 12.75V21m0 0H9.75M12 21h2.25" />
+              </svg>
+              <h3 class="text-xl font-semibold text-white mb-2">Customer Focus</h3>
+              <p class="text-brand-text text-sm">
+                Understanding and exceeding our customers' needs with tailored solutions and support.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-16 text-center">
+          <img 
+            src="https://picsum.photos/seed/teamPhoto/1200/600" 
+            alt="Millenium Drones Team" 
+            class="rounded-lg shadow-xl mx-auto"
+          />
+          <p class="mt-4 text-brand-text italic">The dedicated team behind Millenium Drones.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-brand-secondary text-brand-text py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; <span id="current-year"></span> Millenium Drones. All rights reserved.</p>
+      <p class="text-sm mt-1">Pioneering the Future of Aerial Technology.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

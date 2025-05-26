@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Millenium Drones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#1a202c',
+            'brand-secondary': '#2d3748',
+            'brand-accent': '#00BCD4',
+            'brand-light': '#f7fafc',
+            'brand-text': '#e2e8f0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+   <style>
+    .active-nav-link {
+      background-color: #00BCD4; /* brand-accent */
+      color: white;
+    }
+    .inactive-nav-link {
+      color: #e2e8f0; /* brand-text */
+    }
+     .inactive-nav-link:hover {
+        background-color: #4a5568; /* gray-700 for hover */
+        color: white;
+    }
+  </style>
+</head>
+<body class="bg-brand-primary text-brand-text font-sans">
+  <nav class="bg-brand-secondary shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center">
+          <a href="./index.html" class="flex-shrink-0 flex items-center text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-10 w-10 text-brand-accent mr-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.85l.708.707a2.25 2.25 0 010 3.182L11.53 10.53a2.25 2.25 0 01-3.182 0L6.272 8.455a2.25 2.25 0 010-3.182L7.025 4.48c.205-.2.518-.303.85-.303h.568a2.25 2.25 0 002.25-2.25v-.568c0-.334.148-.65.405-.85L12 2.25l.708.707a1.125 1.125 0 00.85.405h.568c1.24 0 2.25 1.01 2.25 2.25v.568c0 .334-.148.65-.405.85l-.708.707a2.25 2.25 0 000 3.182l2.473 2.472a2.25 2.25 0 003.182 0l.707-.707c.257-.257.405-.596.405-.955V8.25a2.25 2.25 0 00-2.25-2.25h-.568a1.125 1.125 0 00-.85.405L15.75 6.75v-.568a2.25 2.25 0 00-2.25-2.25h-.568A1.125 1.125 0 0012.75 3.03z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18H4.5a2.25 2.25 0 01-2.25-2.25V13.5A2.25 2.25 0 014.5 11.25H6M18 18h1.5a2.25 2.25 0 002.25-2.25V13.5A2.25 2.25 0 0019.5 11.25H18M12 12.75V21m0 0H9.75M12 21h2.25" />
+            </svg>
+            <span class="font-bold text-2xl tracking-tight">Millenium Drones</span>
+          </a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-4">
+            <a href="./index.html" data-navlink="index.html" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Home</a>
+            <a href="./about.html" data-navlink="about.html" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out inactive-nav-link">About Us</a>
+            <a href="./products.html" data-navlink="products.html" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Our Drones</a>
+            <a href="./contact.html" data-navlink="contact.html" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Contact Us</a>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <button
+            id="mobile-menu-button"
+            type="button"
+            class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6 menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <svg class="hidden h-6 w-6 menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:hidden hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="./index.html" data-navlink-mobile="index.html" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Home</a>
+        <a href="./about.html" data-navlink-mobile="about.html" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-150 ease-in-out inactive-nav-link">About Us</a>
+        <a href="./products.html" data-navlink-mobile="products.html" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Our Drones</a>
+        <a href="./contact.html" data-navlink-mobile="contact.html" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-150 ease-in-out inactive-nav-link">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow">
+    <div class="bg-brand-primary py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h1 class="text-4xl font-extrabold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
+            Get In Touch
+          </h1>
+          <p class="mt-6 max-w-3xl mx-auto text-xl text-brand-text">
+            We're here to help with any questions you have about our drones or services. Reach out and let's talk.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <!-- Contact Form -->
+          <div class="bg-brand-secondary p-8 rounded-lg shadow-xl">
+            <h2 class="text-2xl font-bold text-brand-accent mb-6">Send Us a Message</h2>
+            <form id="contact-form" class="space-y-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-brand-text">Full Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  required
+                  class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-accent focus:border-brand-accent sm:text-sm text-white"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-brand-text">Email Address</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-accent focus:border-brand-accent sm:text-sm text-white"
+                />
+              </div>
+              <div>
+                <label for="subject" class="block text-sm font-medium text-brand-text">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  required
+                  class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-accent focus:border-brand-accent sm:text-sm text-white"
+                />
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-brand-text">Message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="4"
+                  required
+                  class="mt-1 block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-brand-accent focus:border-brand-accent sm:text-sm text-white"
+                ></textarea>
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-brand-primary bg-brand-accent hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-accent transition-colors duration-150"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+            <div id="form-feedback" class="hidden">
+                <!-- Success message will be injected here by script.js -->
+            </div>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="bg-brand-secondary p-8 rounded-lg shadow-xl">
+            <h2 class="text-2xl font-bold text-brand-accent mb-6">Contact Information</h2>
+            <div class="space-y-4 text-brand-text">
+              <div class="flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 h-6 w-6 text-brand-accent mr-3 mt-1"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+                <div>
+                  <h3 class="text-lg font-semibold text-white">Email Us</h3>
+                  <a href="mailto:info@milleniumdrones.com" class="hover:text-brand-accent transition-colors">
+                    info@milleniumdrones.com
+                  </a>
+                </div>
+              </div>
+              <div class="flex items-start">
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 h-6 w-6 text-brand-accent mr-3 mt-1"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.051-.996-.15-1.462l-1.967-5.246a2.25 2.25 0 00-2.165-1.618H16.5c-.568 0-1.07.248-1.442.649l-1.014.903a12.32 12.32 0 01-5.21-5.21l.903-1.014c.401-.372.649-.874.649-1.442V4.5A2.25 2.25 0 0010.5 2.25H9c-8.284 0-15 6.716-15 15V11.25a2.25 2.25 0 012.25-2.25H4.5M12.75 9.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12.75 12.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12.75 15.75a.75.75 0 100-1.5.75.75 0 000 1.5z" /></svg>
+                <div>
+                  <h3 class="text-lg font-semibold text-white">Call Us</h3>
+                  <p>+1 (555) 123-4567</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 h-6 w-6 text-brand-accent mr-3 mt-1"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+                <div>
+                  <h3 class="text-lg font-semibold text-white">Visit Us</h3>
+                  <p>123 Drone Lane, Innovation City, CA 90210</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 rounded-lg overflow-hidden shadow-md">
+               <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.719999974366!2d-118.4090216847849!3d34.05223498060619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sBeverly%20Hills%20City%20Hall!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                title="Company Location"
+                class="filter grayscale contrast-120 opacity-75"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-brand-secondary text-brand-text py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p>&copy; <span id="current-year"></span> Millenium Drones. All rights reserved.</p>
+      <p class="text-sm mt-1">Pioneering the Future of Aerial Technology.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
